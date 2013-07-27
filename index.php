@@ -30,7 +30,6 @@ if(isset($_POST['lo'])){
 		$logged=0;
 	}
 }
-//var_dump($url.$part,$_SERVER["QUERY_STRING"]);
 $part='';
 if($logged){
 	if(isset($_GET['x'])){
@@ -42,7 +41,7 @@ if($logged){
 		$part.=$_SERVER["PATH_INFO"];
 	$_SESSION['part']=$part;
 }
-//echo addslashes($page);die();
+
 if($part){ 
 	require('proxy.php');
 }else{
@@ -54,7 +53,9 @@ if($part){
 	<title>Proxy Login</title>
 	<link href="style.css" rel="stylesheet" type="text/css">
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-	<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript">
+
+</script>
 </head>
 <?php if($logged) { ?>
 <body id="fbody">
