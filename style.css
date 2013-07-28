@@ -1,6 +1,6 @@
 html{height:100%;width:100%;margin:0px;padding:0px;border:0px;}
 #wbody{background-color:#dedede;width:100%;margin: 0px; padding: 0px}
-#w{margin: 0 auto;margin-top:15%;width: 30%; border-radius:20px; border: 5px solid rgba(255,255,255,0.3); box-shadow: 0px 0px 20px #555;background-color:rgba(100,100,100,0.5); padding: 30px;text-align:center}
+#w{margin: 0 auto;margin-top:10%;width: 30%; border-radius:20px; border: 5px solid rgba(255,255,255,0.3); box-shadow: 0px 0px 100px 10px #555;background-color:rgba(100,100,100,0.5); padding: 30px;text-align:center}
 #u,#p{padding: 10px;font-size:14px;border-radius:50px; border: 2px solid #666;width:300px;margin: 15px;background-color:#efefef;box-shadow: 0px 0px 15px #888 inset;text-align:center;-webkit-transition:background-color linear 0.2s,box-shadow linear 0.2s;transition:background-color linear 0.2s,box-shadow linear 0.2s}
 #u:hover,#p:hover{box-shadow:none;-webkit-transition:box-shadow linear 0.2s;transition:box-shadow linear 0.2s}
 #u:focus,#p:focus{background-color:#fefefe;-webkit-transition:background-color linear 0.1s;transition:background-color linear 0.1s}
@@ -21,5 +21,5 @@ float:left;margin:5px 0px;}
 #ft{width:85%;padding: 3px;font-size:12px;border-radius:5px; border: 2px solid #aaa;width:85%;background-color:#f9f9f9;margin:4px 0px;}
 #ft:focus{background-color:#fff}
 #fs{background-color:#999;border:2px solid #777;border-radius:5px;padding:2px 6px;color:#fff;cursor:pointer}
-#cn{float:right;cursor:crosshair;font-size:10px;font-family:Courier;text-shadow:0px 0px 15px #000;margin:20px 0px;padding-right:10px;}
-#cn .b{color:#000}#cn .w{color:#777;}
+#cn{float:right;cursor:crosshair;font-size:10px;font-family:Courier;margin:20px 0px;padding-right:10px;}
+#cn .b{color:#000}#cn .w{color:#666;}

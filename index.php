@@ -43,6 +43,9 @@ if($logged){
 	if(isset($_SERVER["PATH_INFO"]))
 		$part.=$_SERVER["PATH_INFO"];
 	$_SESSION['part']=$part;
+	if(isset($_SERVER["QUERY_STRING"]))
+		$part.='?'.$_SERVER["QUERY_STRING"];
+	$_SESSION['part']=$part;
 }
 
 if($part){ 
