@@ -3,6 +3,7 @@ ini_set("use_cookies",1);
 ini_set("use_only_cookies",1);
 ini_set('session.save_path',"s");
 session_name("PROXY_SESSION123");
+session_set_cookie_params(0,"/");
 session_start();
 $username="jha";
 $password="bc29b08213e84b61a4c0d088096c6ec8";
@@ -12,7 +13,9 @@ $logged=0;
 if(isset($_POST['lo'])){
 	if($_POST['lo']==1){
 		$logged=0;
+		setcookie(session_name(),"",time()-10000);
 		session_destroy();
+		if(file_exists("s/c.dat")) unlink("s/c.dat");
 		session_start();
 	}
 }else if(isset($_SESSION['logged'])){
@@ -54,7 +57,32 @@ if($part){
 	<link href="style.css" rel="stylesheet" type="text/css">
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 <script type="text/javascript">
-
+function g(v){ return document.getElementById(v)}
+window.onload=function(){
+	var x=g("mi")
+	if(x) x.onclick=function(){ down("fu"); up("fd");}
+	x=g("ma")
+	if(x) x.onclick=function(){ down("fd"); up("fu");}
+}
+var de,ds,di,ue,us,ui
+function down(id){
+	de=g(id);
+	di=0;
+	ds=window.setInterval(function(){
+		di-=5;
+		if(di<-60){ window.clearInterval(ds); }
+		else de.style.bottom=di+"px";
+		},20)
+}
+function up(id){
+	ue=g(id);
+	ui=-60;
+	us=window.setInterval(function(){
+		ui+=3;
+		if(ui>=-3){ ue.style.bottom="0px"; window.clearInterval(us); }
+		else ue.style.bottom=ui+"px";
+		},20)
+}
 </script>
 </head>
 <?php if($logged) { ?>
@@ -77,7 +105,7 @@ if($part){
 	</div>
 	<div id="fd"><a id="ma" title="Show address bar"><img alt="out" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAQAAABKfvVzAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiUAAICDAAD5/wAAgOkAAHUwAADqYAAAOpgAABdvkl/FRgAAAAJiS0dEAP+Hj8y/AAAACXBIWXMAAAsTAAALEwEAmpwYAAAByUlEQVQ4y5WSv2sUURDHP/N2nrsR9pSAQYNoimjAH8EmNhYixLQKqcQ/4QjptFHBX80lcEXSiEVqxVZtBRttBYtoZa5JIaKL3u3p3Y1F9ty9Y88jM9Wb9/nO+743T/h/KNM4MQAB4YeMEcRssCi9TODk6RheYF7eiok5cxZYUFeACA4wiQ6xTb51rfOB27yQYyCAoBHAHFWuEmP/cEfCfXnWhZhrMtnHgZDwdPgmtKFMwltRFCAVqbmWs8ACU/Pm62qeKpcB+EUrM9OWOpt/0l6FO7JCJNCS5zLLJUGZYhGA96zxJROk9rmTWo6nsskDZuSJCH7WN7z5n37Z4ws3LphpaU0rSkR4LrqCzuiOmu76MzqIrw3i+ShP6o6aNvS4Fp5IltzXIq4H9ejevjPyLAzhHVvSpi0bPCKx0FbthmV/pSR6BAkPaYqwbgkhK9ylxmgBdNGExwhtg2W5x0TfgFq5gg783rsPpyzO6459xr4FfUtSLhUMgrITJpge0TJgalhgwGGuE4vIQHcBxxwLkFGAkrDNCRxVzrNNIjbUfYELQMqnvHyT79iYfM2RXBCySoPuSLjJK87mRgE8F1niEGVTND7ykt3+8i9webEP7CLlvwAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxMy0wNy0yN1QxNjoyNToxNyswNjowMI8zPJQAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTMtMDctMjdUMTY6MjU6MTUrMDY6MDBp8ZUBAAAAAElFTkSuQmCC" /></a></div>
 	
-	<div id="f2"><iframe seamless id="fm" src="proxy.php"></iframe>
+	<div id="f2" style="overflow:hidden"><iframe seamless="seamless" id="fm" src="proxy.php"></iframe></div>
 </body>
 <?php } else { ?>
 <body id="wbody">
