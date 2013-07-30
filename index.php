@@ -60,10 +60,11 @@ if($part!='?' && $part!=''){
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 <style type="text/css">
 html{height:100%;width:100%;margin:0px;padding:0px;border:0px;}
-#wbody{background-color:#dedede;width:100%;margin: 0px; padding: 0px}
+#wbody{background-color:#dedede;width:100%;margin: 0px; padding: 0px;-webkit-transition:background-color linear 1s; transition:background-color linear 1s;}
+#wbody:hover{background-color:#999;-webkit-transition:background-color linear 1s; transition:background-color linear 1s;}
 #w{margin: 0 auto;margin-top:10%;width: 30%; border-radius:20px; border: 5px solid rgba(255,255,255,0.3); box-shadow: 0px 0px 100px 10px #555;background-color:rgba(100,100,100,0.5); padding: 30px;text-align:center}
 #u,#p{padding: 10px;font-size:14px;border-radius:50px; border: 2px solid #666;width:70%;margin: 15px;background-color:#efefef;box-shadow: 0px 0px 15px #888 inset;text-align:center;-webkit-transition:background-color linear 0.2s,box-shadow linear 0.2s;transition:background-color linear 0.2s,box-shadow linear 0.2s}
-#u:hover,#p:hover{box-shadow:none;-webkit-transition:box-shadow linear 0.2s;transition:box-shadow linear 0.2s}
+#u:hover,#p:hover,#u:focus,#p:focus{box-shadow:none;-webkit-transition:box-shadow linear 0.2s;transition:box-shadow linear 0.2s}
 #u:focus,#p:focus{background-color:#fefefe;-webkit-transition:background-color linear 0.1s;transition:background-color linear 0.1s}
 #su{padding: 7px 30px;font-size:12px;border-radius:10px; border: 1px solid #555;margin: 20px;background-color:#777;cursor:pointer;color:#fff;opacity:0.8}
 #su:hover,#su:focus{box-shadow:0px 0px 10px #ccc; opacity:1}
