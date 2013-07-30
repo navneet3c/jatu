@@ -56,7 +56,7 @@ if($part!='?' && $part!=''){
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
-	<title>Proxy Login</title>
+	<title>Proxy</title>
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 <style type="text/css">
 html{height:100%;width:100%;margin:0px;padding:0px;border:0px;}

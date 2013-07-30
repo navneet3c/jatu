@@ -14,12 +14,11 @@ else{
 	$site=strrpos($url,'?');
 	if($site!==false)
 		$url=substr($url,0,strrpos($url,'?'));
-	$site=strrpos(trim($url,"/"),'/');
+	$site=strrpos(trim($url,"/"),'/',7);
 	if($site!==false && strpos($url,'.',$site)!==false){
 		$url=substr($url,0,strrpos($url,'/'));
 	}
 }
-
 $site=trim('http://'.$_SERVER["HTTP_HOST"].$_SERVER["PHP_SELF"]," \n\r\0/");
 $site=substr($site,0,strrpos($site,'/'));
 $curl=curl_init();
