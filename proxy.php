@@ -36,25 +36,19 @@ if($_POST){
 	curl_setopt($curl,CURLOPT_POST,1);
 	curl_setopt($curl,CURLOPT_POSTFIELDS,$_POST);
 }
-//var_dump(curl_getinfo($curl));
 $page=curl_exec($curl);
 $resp=curl_getinfo($curl,CURLINFO_HTTP_CODE);
 $type=curl_getinfo($curl,CURLINFO_CONTENT_TYPE);
 curl_close($curl); 
 //global
-$res=trim($_SERVER["PHP_SELF"],'/');
+/*$res=trim($_SERVER["PHP_SELF"],'/');
 $res=substr($res,0,strrpos($res,'/')+1);
-$page=preg_replace('/src\s*=\s*(\"|\\\')(?!http:)/','src=${1}/'.$res,$page);
-$page=preg_replace('/href\s*=\s*(\"|\\\')\//','href=${1}./',$page);
+$page=preg_replace('/src\s*=\s*(\"|\\\')?(?!http:)/','src=${1}/'.$res,$page);*/
+$page=preg_replace('/(bgimage|src|href)\s*=\s*(\"|\\\')?\//','${1}=${2}./',$page);
+$page=preg_replace('/url\s*\(\s*(\"|\\\')?\//','url(${1}./',$page);
 
 $page=str_replace($old,$site,$page);
 
-/*if(strrpos($part,'.css')!==false)
-	$res=trim(substr($part,0,strrpos($part,'/')),"/");
-else $res=trim($part,"/");
-$page=preg_replace('/url\s*\(\s*(?!\\\'|http:)/','url('.$res.'/',$page);
-$page=preg_replace('/url\s*\(\s*\\\'(?!http:)/','url(\''.$res.'/',$page);
-*/
 header("Content-Type: ".$type);
 echo $page; 
 ?>
