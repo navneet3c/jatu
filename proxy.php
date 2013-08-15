@@ -22,6 +22,7 @@ else{
 $site=trim('http://'.$_SERVER["HTTP_HOST"].$_SERVER["PHP_SELF"]," \n\r\0/");
 $site=substr($site,0,strrpos($site,'/'));
 $curl=curl_init();
+$_SERVER["SERVER_ADDR"]=$_SERVER["REMOTE_ADDR"]="1:1:1:1";
 curl_setopt_array($curl,array(
 	CURLOPT_URL=>$url.$part,
 	CURLOPT_BINARYTRANSFER=>true,

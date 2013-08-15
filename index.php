@@ -6,7 +6,7 @@ session_name("PROXY_SESSION123");
 session_set_cookie_params(0,"/");
 session_start();
 $username="jha";
-$password="bc29b08213e84b61a4c0d088096c6ec8";
+$password="28a7f2dbdede42e69b7586260abd74b6";
 $initial="http://localhost";
 $logged=0;
 
@@ -70,12 +70,12 @@ html{height:100%;width:100%;margin:0px;padding:0px;border:0px;}
 #su:hover,#su:focus{box-shadow:0px 0px 10px #ccc; opacity:1}
 #fbody{width:100%;margin: 0px; padding: 0px;height:100%;}
 #fu,#fd{box-shadow: 0px 0px 10px #000;border-radius:10px 10px 0px 0px;position:fixed;bottom:0px;left:0px;margin:0px;}
-#fu{height:30px;width:100%;background-color:#efefef;padding:5px;}
+#fu{height:30px;width:100%;background-color:#efefef;padding:5px;bottom:-60px}
 #mi,#ma{cursor:pointer;width:24px;height:24px;opacity:0.4;-webkit-transition:opacity linear 0.2s;transition:opacity linear 0.2s}
 #mi{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAQAAABKfvVzAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAJiS0dEAP+Hj8y/AAAACXBIWXMAAAsTAAALEwEAmpwYAAAB60lEQVQ4y5WUvWtUQRTFf/e9mXmPqBsUxBRCLIxCInaClSiCjYWCpYVYWalNtAoWJoVEJJhg7z8gaBPBIAhqYxBs1UYTDOKGkH0bssmafcdiN9m3MRvIuQwM955zP2aGMdro4zJDGP/DqPCGT/wtOoeYZhV1sQbz3CVp0w/zuit505a5Dq5ZkYucB3K+MMsfGh3tlDjJOfbTyw2mWz57YDLZZxu0yDrGMMzsgD2yhsl+Wn+05QeY5Su5UEEgJKq8ZLnJiopzb2umiAVqzY1rpwcakO94quSbZSP2iD0Lii1V9R0cJIj6RmdLnQLAqPHQXgAlhiWexFmjewWgwihTtk6JEd0B9TAaZTld4HB9rsfhSm48rsWKFC3apagYP+rmndyc6y862/SaPbaSFWJ+0P12cnPuGOmF5FS6nT5epHs8/ppf8fLz/rjTFZ3Jb/GDEd0mFaxpijHLXMoAaeu6+rnHPiCjRpjw8h/c83i1nT0mSZPh8CsshnIoh3JYCQoKCk+Dx094OcUq0tM0uZ9kibbZu+REghPQWuuaZMyqwXTVblKlUri5KjM84xu4LTpa4hXVGMEMHzveOGywRH0NIJ6IFSmSyWTvOb3TH1BEHJ3VABVlZGQ6xBHeUt9NYNFBelGzvoycBTZ2E/wDrpHYJtTBA/EAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTMtMDctMjdUMTY6MzI6MTUrMDU6MDApS0bqAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDEzLTA3LTI3VDE2OjMyOjE1KzA1OjAwWBb+VgAAAABJRU5ErkJggg==");
 float:left;margin:5px 0px;}
 #mi:hover,#ma:hover{opacity:1.0; -webkit-transition:opacity linear 0.4s;transition:opacity linear 0.4s}
-#fd{background-color:#efefef;padding:8px;height:30px;bottom:-60px}
+#fd{background-color:#efefef;padding:8px;height:30px}
 #f2{overflow:auto;height:100%;}
 #fm{width:100%;height:100%;border:0px;margin:0px;padding:0px;}
 #fo{padding-left:10px}
