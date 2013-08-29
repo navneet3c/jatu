@@ -59,6 +59,7 @@ case 'text/html':
 default:
 	header("Cache-Control: max-age=2592000");
 	header('Pragma: cache');
+	header("Expires: ".date("r",time()+2592000));
 }
 header("Content-Type: ".$type);
 echo $page; 
