@@ -7,7 +7,7 @@ session_set_cookie_params(0,"/");
 session_start();
 $username="jha";
 $password="28a7f2dbdede42e69b7586260abd74b6";
-$initial="http://localhost";
+$initial="http://";
 $logged=0;
 
 if(isset($_POST['lo'])){
@@ -69,70 +69,48 @@ html{height:100%;width:100%;margin:0px;padding:0px;border:0px;}
 #su{padding: 7px 30px;font-size:12px;border-radius:10px; border: 1px solid #555;margin: 20px;background-color:#777;cursor:pointer;color:#fff;opacity:0.8}
 #su:hover,#su:focus{box-shadow:0px 0px 10px #ccc; opacity:1}
 #fbody{width:100%;margin: 0px; padding: 0px;height:100%;}
-#fu,#fd{box-shadow: 0px 0px 10px #000;border-radius:10px 10px 0px 0px;position:fixed;bottom:0px;left:0px;margin:0px;}
-#fu{height:30px;width:100%;background-color:#efefef;padding:5px;bottom:-60px}
+#fu,#fd{box-shadow: 0px 0px 10px #000;border-radius:10px 10px 0px 0px;position:fixed;bottom:0px;right:0px;margin:0px;}
+#fu{height:35px;background-color:#efefef;bottom:-60px}
 #mi,#ma{cursor:pointer;width:24px;height:24px;opacity:0.4;-webkit-transition:opacity linear 0.2s;transition:opacity linear 0.2s}
 #mi{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAQAAABKfvVzAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAJiS0dEAP+Hj8y/AAAACXBIWXMAAAsTAAALEwEAmpwYAAAB60lEQVQ4y5WUvWtUQRTFf/e9mXmPqBsUxBRCLIxCInaClSiCjYWCpYVYWalNtAoWJoVEJJhg7z8gaBPBIAhqYxBs1UYTDOKGkH0bssmafcdiN9m3MRvIuQwM955zP2aGMdro4zJDGP/DqPCGT/wtOoeYZhV1sQbz3CVp0w/zuit505a5Dq5ZkYucB3K+MMsfGh3tlDjJOfbTyw2mWz57YDLZZxu0yDrGMMzsgD2yhsl+Wn+05QeY5Su5UEEgJKq8ZLnJiopzb2umiAVqzY1rpwcakO94quSbZSP2iD0Lii1V9R0cJIj6RmdLnQLAqPHQXgAlhiWexFmjewWgwihTtk6JEd0B9TAaZTld4HB9rsfhSm48rsWKFC3apagYP+rmndyc6y862/SaPbaSFWJ+0P12cnPuGOmF5FS6nT5epHs8/ppf8fLz/rjTFZ3Jb/GDEd0mFaxpijHLXMoAaeu6+rnHPiCjRpjw8h/c83i1nT0mSZPh8CsshnIoh3JYCQoKCk+Dx094OcUq0tM0uZ9kibbZu+REghPQWuuaZMyqwXTVblKlUri5KjM84xu4LTpa4hXVGMEMHzveOGywRH0NIJ6IFSmSyWTvOb3TH1BEHJ3VABVlZGQ6xBHeUt9NYNFBelGzvoycBTZ2E/wDrpHYJtTBA/EAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTMtMDctMjdUMTY6MzI6MTUrMDU6MDApS0bqAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDEzLTA3LTI3VDE2OjMyOjE1KzA1OjAwWBb+VgAAAABJRU5ErkJggg==");
-float:left;margin:5px 0px;}
+display:inline-block;vertical-align:middle}
 #mi:hover,#ma:hover{opacity:1.0; -webkit-transition:opacity linear 0.4s;transition:opacity linear 0.4s}
 #fd{background-color:#efefef;padding:8px;height:30px}
 #f2{overflow:auto;height:100%;}
 #fm{width:100%;height:100%;border:0px;margin:0px;padding:0px;}
-#fo{padding-left:10px}
-#lo{float:right;background-color:#444;border:1px solid #666;border-radius:5px;padding:2px 4px;color:#fff;cursor:pointer;margin:4px 0px}
-#ft{padding: 3px;font-size:12px;border-radius:5px; border: 2px solid #aaa;background-color:#f9f9f9;margin:4px 0px;width:80%}
+#fo form{display:inline}
+.lo{background-color:#444;border:1px solid #666;border-radius:5px;padding:2px 4px;color:#fff;cursor:pointer;margin:4px 0px}
+#ft{padding: 3px;font-size:12px;border-radius:5px; border: 2px solid #aaa;background-color:#f9f9f9;margin:4px 0px;width:150px}
 #ft:focus{background-color:#fff}
-#fs{background-color:#999;border:2px solid #777;border-radius:5px;padding:2px 6px;color:#fff;cursor:pointer}
-#cn{float:right;cursor:crosshair;font-size:10px;font-family:Courier;margin:20px 0px;padding-right:10px;}
-#cn .b{color:#000}#cn .w{color:#666;}
+.fs{background-color:#999;border:2px solid #777;border-radius:5px;padding:2px 6px;color:#fff;cursor:pointer}
 </style>
-<script type="text/javascript">
-function g(v){ return document.getElementById(v)}
-window.onload=function(){
-	var x=g("mi")
-	if(x) x.onclick=function(){ down("fu"); up("fd");}
-	x=g("ma")
-	if(x) x.onclick=function(){ down("fd"); up("fu");}
-}
-var de,ds,di,ue,us,ui
-function down(id){
-	de=g(id);
-	di=0;
-	ds=window.setInterval(function(){
-		di-=5;
-		if(di<-60){ window.clearInterval(ds); }
-		else de.style.bottom=di+"px";
-		},20)
-}
-function up(id){
-	ue=g(id);
-	ui=-60;
-	us=window.setInterval(function(){
-		ui+=3;
-		if(ui>=-3){ ue.style.bottom="0px"; window.clearInterval(us); }
-		else ue.style.bottom=ui+"px";
-		},20)
-}
-</script>
 </head>
 <?php if($logged) { ?>
 <body id="fbody">
 	<div id="fu">
-		<div id="cn" draggable="true"><span class="w">Code</span><span class="b">Navo</span></div>
-		<a id="mi" title="Minimize address bar"></a>
 		<div id="fo">
+		&nbsp;<a id="mi" title="Minimize address bar"></a>&nbsp;
+			<form action="index.php" method="get">
+				&nbsp;&nbsp;<input type="text" value="<?=$_SESSION['url']?>" id="ft" name="x" value="" placeholder="Enter URL">&nbsp;<input type="submit" value="Go" class="fs">
+			</form>
+			<button class="fs" onclick="javascript:document.location='proxy.php'">Direct</button>&nbsp;
 			<form action="index.php" method="post">
 				<input type="hidden" value="1" name="lo">
-				<input type="submit" id="lo" value="Logout">
-			</form>
-			<form action="index.php" method="get">
-				&nbsp;&nbsp;<input type="text" value="<?=$_SESSION['url']?>" id="ft" name="x" value="" placeholder="Enter URL">&nbsp;<input type="submit" value="Go" id="fs">
-			</form>
-			
+				<input type="submit" class="lo" value="Logout">
+			</form>&nbsp;
 		</div>
-		
 	</div>
 	<div id="fd"><a id="ma" title="Show address bar"><img alt="out" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAQAAABKfvVzAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiUAAICDAAD5/wAAgOkAAHUwAADqYAAAOpgAABdvkl/FRgAAAAJiS0dEAP+Hj8y/AAAACXBIWXMAAAsTAAALEwEAmpwYAAAByUlEQVQ4y5WSv2sUURDHP/N2nrsR9pSAQYNoimjAH8EmNhYixLQKqcQ/4QjptFHBX80lcEXSiEVqxVZtBRttBYtoZa5JIaKL3u3p3Y1F9ty9Y88jM9Wb9/nO+743T/h/KNM4MQAB4YeMEcRssCi9TODk6RheYF7eiok5cxZYUFeACA4wiQ6xTb51rfOB27yQYyCAoBHAHFWuEmP/cEfCfXnWhZhrMtnHgZDwdPgmtKFMwltRFCAVqbmWs8ACU/Pm62qeKpcB+EUrM9OWOpt/0l6FO7JCJNCS5zLLJUGZYhGA96zxJROk9rmTWo6nsskDZuSJCH7WN7z5n37Z4ws3LphpaU0rSkR4LrqCzuiOmu76MzqIrw3i+ShP6o6aNvS4Fp5IltzXIq4H9ejevjPyLAzhHVvSpi0bPCKx0FbthmV/pSR6BAkPaYqwbgkhK9ylxmgBdNGExwhtg2W5x0TfgFq5gg783rsPpyzO6459xr4FfUtSLhUMgrITJpge0TJgalhgwGGuE4vIQHcBxxwLkFGAkrDNCRxVzrNNIjbUfYELQMqnvHyT79iYfM2RXBCySoPuSLjJK87mRgE8F1niEGVTND7ykt3+8i9webEP7CLlvwAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxMy0wNy0yN1QxNjoyNToxNyswNjowMI8zPJQAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTMtMDctMjdUMTY6MjU6MTUrMDY6MDBp8ZUBAAAAAElFTkSuQmCC" /></a></div>
+<script type="text/javascript">
+function g(v){ return document.getElementById(v)}
+	g("mi").onclick=function(){ down("fu"); up("fd");}
+	g("ma").onclick=function(){ down("fd"); up("fu");}
+
+var de,ds,di,ue,us,ui;
+function down(id){de=g(id);di=0;ds=window.setInterval(function(){	di-=5;if(di<-60){ window.clearInterval(ds); }	else de.style.bottom=di+"px";	},20) };
+function up(id){ue=g(id);ui=-60;us=window.setInterval(function(){	ui+=3;	if(ui>=-3){ ue.style.bottom="0px"; window.clearInterval(us); }else ue.style.bottom=ui+"px";	},20)}
+</script>
+	
 	
 	<div id="f2" style="overflow:hidden"><iframe seamless="seamless" id="fm" src="proxy.php"></iframe></div>
 </body>

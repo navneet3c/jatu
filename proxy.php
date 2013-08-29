@@ -9,6 +9,8 @@ if(!session_id()){
 if(!$_SESSION['logged']) die();
 $url=$_SESSION['url'];
 $old=$_SESSION['url'];
+if($url=="http://") exit();
+
 if(!isset($part)) $part='';
 else{
 	$site=strrpos($url,'?');
@@ -41,15 +43,23 @@ $page=curl_exec($curl);
 $resp=curl_getinfo($curl,CURLINFO_HTTP_CODE);
 $type=curl_getinfo($curl,CURLINFO_CONTENT_TYPE);
 curl_close($curl); 
-//global
-/*$res=trim($_SERVER["PHP_SELF"],'/');
-$res=substr($res,0,strrpos($res,'/')+1);
-$page=preg_replace('/src\s*=\s*(\"|\\\')?(?!http:)/','src=${1}/'.$res,$page);*/
+
 $page=preg_replace('/(bgimage|src|href)\s*=\s*(\"|\\\')?\//','${1}=${2}./',$page);
 $page=preg_replace('/url\s*\(\s*(\"|\\\')?\//','url(${1}./',$page);
 
 $page=str_replace($old,$site,$page);
-
+date_default_timezone_set('GMT');
+switch ($type){
+case 'text/html':
+	header("Cache-Control: private, must-revalidate");
+	header('Pragma: no-cache');
+	//header("Date: ".date("r",time()));
+	//header("Expires: ".date("r",time()+5));
+	break;
+default:
+	header("Cache-Control: max-age=2592000");
+	header('Pragma: cache');
+}
 header("Content-Type: ".$type);
 echo $page; 
 ?>
