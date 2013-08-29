@@ -49,14 +49,12 @@ $page=preg_replace('/url\s*\(\s*(\"|\\\')?\//','url(${1}./',$page);
 
 $page=str_replace($old,$site,$page);
 date_default_timezone_set('GMT');
-switch ($type){
-case 'text/html':
+if(strpos($type,'text/html')!==false){
 	header("Cache-Control: private, must-revalidate");
 	header('Pragma: no-cache');
 	//header("Date: ".date("r",time()));
 	//header("Expires: ".date("r",time()+5));
-	break;
-default:
+}else{
 	header("Cache-Control: max-age=2592000");
 	header('Pragma: cache');
 	header("Expires: ".date("r",time()+2592000));
